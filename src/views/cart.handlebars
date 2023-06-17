@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/products.css" />
+<nav>
+    <div class="homeContainer">
+        <img src="https://i.imgur.com/WVX7g9b.png"
+        alt="Home" onclick="goToHomeView()" style="width: 30px; height: 30px" />
+    </div>
+    <div class="cartContainer">
+        <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png?w=826&t=st=1687022573~exp=1687023173~hmac=8843dd8bcb9c768f3894e8de18166759c010392f4be7bfbbd4bc8d919e06bd75"
+        alt="Carrito" onclick="goToCartView()" style="width: 30px; height: 30px" />
+    </div>
+</nav>
+<main>
+    <h1>¡Tu carrito! :)</h1>
+    <h3>Estos son tus productos</h3>
+    <section class="productCatalog">
+        {{#each cart.products}}
+        <div class="productCard">
+            <h3>{{this.product.title}}</h3>
+            <ul>
+                <li>Description: {{this.product.description}}</li>
+                <li>Price: ${{this.product.price}}</li>
+                <li>Category: {{this.product.category}}</li>
+                <li>Quantity: {{this.quantity}}</li>
+            </ul>
+        </div>
+        {{/each}}
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/products.js"></script>

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/products.css" />
+<nav>
+    <div class="homeContainer">
+        <img src="https://i.imgur.com/WVX7g9b.png"
+        alt="Home" onclick="goToHomeView()" style="width: 30px; height: 30px" />
+    </div>
+    <div class="cartContainer">
+        <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png?w=826&t=st=1687022573~exp=1687023173~hmac=8843dd8bcb9c768f3894e8de18166759c010392f4be7bfbbd4bc8d919e06bd75"
+        alt="Carrito" onclick="goToCartView()" style="width: 30px; height: 30px" />
+    </div>
+</nav>
+<main>
+    <h1>Lista completa de productos</h1>
+    <section class="productCatalog">
+        {{#each data.products}}
+        <div class="productCard">
+            <h3>{{this.title}}</h3>
+            <ul>
+                <li>ID: {{this.id}}</li>
+                <li>Description: {{this.description}}</li>
+                <li>Code: {{this.code}}</li>
+                <li>Price: {{this.price}}</li>
+                <li>Status: {{this.status}}</li>
+                <li>Stock: {{this.stock}}</li>
+                <li>Category: {{this.category}}</li>
+                <li>Thumbnails: {{this.thumbnails}}</li>
+            </ul>
+            <div class="productCardInput">
+                <input type="button" id="viewProductBtn" class="productBtn" value="Ver producto"
+                    onclick="goToProductView('{{this.id}}')" />
+                <input type="button" id="addToCartBtn" class="productBtn" value="Agregar al carrito"
+                    onclick="addProductToCart('{{this.id}}')" />
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</main>
+<footer class="paginationFooter">
+    {{#if data.info.hasPrevPage}}<span onclick="goToPage('{{data.info.firstLink}}')">First</span><span onclick="goToPage('{{data.info.prevLink}}')"><</span>{{/if}} {{data.info.page}} {{#if data.info.hasNextPage}}<span onclick="goToPage('{{data.info.nextLink}}')">></span><span onclick="goToPage('{{data.info.lastLink}}')">Last</span>{{/if}}
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/products.js"></script>

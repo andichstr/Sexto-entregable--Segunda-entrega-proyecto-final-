@@ -1,0 +1,59 @@
+body {
+    font-family: system-ui;
+}
+h1, h3 {
+    text-align: center;
+}
+main {
+    padding-top: 2vh;
+}
+.productCatalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.productCard {
+    flex-direction: row;
+    flex-basis: 33%;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid darkblue;
+    border-radius: 5vh;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    min-height: 350px;
+}
+.productCard:hover {
+    box-shadow: 3px 3px 3px blue;
+    transition: box-shadow .2s;
+}
+.productCardInput {
+    text-align: center;
+    padding-bottom: 5px;
+}
+.productBtn{
+    border-radius: 1vh;
+    background-color: rgba(149, 149, 149, 0.437);
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(62, 72, 255);
+}
+
+.paginationFooter {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.paginationFooter > span:hover {
+    cursor: pointer;
+}
+
+.cartContainer {
+    float: right
+}
+
+.homeContainer {
+    float: left
+}

@@ -1,0 +1,68 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<table id="tabla1" class="table table-dark table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Code</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Stock</th>
+        <th>Category</th>
+        <th>Thumbnail</th>
+    </tr>
+    {{#each products}}
+    <tr>
+        <th>{{this._id}}</th>
+        <th>{{this.title}}</th>
+        <th>{{this.description}}</th>
+        <th>{{this.code}}</th>
+        <th>{{this.price}}</th>
+        <th>{{this.status}}</th>
+        <th>{{this.stock}}</th>
+        <th>{{this.category}}</th>
+        <th>{{this.thumbnail}}</th>
+    </tr>
+    {{/each}}
+</table>
+<div class="container">
+    <h1 style="color:blue"> New product</h1>
+    <form>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input class="form-control" id="title" name="title" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input class="form-control" id="description" name="description" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">Code</label>
+            <input class="form-control" id="code" name="code" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input class="form-control" id="category" name="category" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="thumbnail" class="form-label">Thumbnail</label>
+            <input type="url" class="form-control" id="thumbnail" name="thumbnail">
+        </div>
+        <button type="submit" id="new" class="btn btn-primary">Cargar</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
